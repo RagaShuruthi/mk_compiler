@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dark Python Compiler</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+  <div class="main-wrapper">
+    <!-- Left Panel -->
+    <div id="left-container" class="container">
+      <h2>Python Compiler (Dark Mode)</h2>
+
+      <!-- Editor Area -->
+      <div class="editor-wrapper">
+        <div id="editor">print("Hello, World!")</div>
+      </div>
+
+      <!-- Dynamic Input Fields -->
+      <div id="inputFields" style="display: none;"></div>
+
+      <!-- Run Button -->
+      <button id="runBtn" class="btn run-btn">Run</button>
+      <br><br>
+
+      <!-- Save / Load Buttons -->
+      <div id="save-load-container">
+        <center>
+        <button id="saveBtn" class="btn">💾 Save</button>
+        <button id="loadBtn" class="btn">📂 Load</button></center>
+      </div>
+
+      <!-- Output Section -->
+      <h3>Output</h3>
+      <pre id="output" class="output-box">Click "Run" to see the output here...</pre>
+    </div>
+
+    <!-- Resizer Handle -->
+    <div class="resizer"></div>
+
+    <!-- Right Panel -->
+    <div id="right-container" class="right-side-container">
+      
+      <!-- Execution Trace Panel -->
+      <div id="traceExecution" class="container-box">
+        <h3>Execution Trace</h3>
+        <pre id="trace">Code trace will appear here...</pre>
+
+        <!-- Trace Navigation Buttons -->
+        <div id="traceControls" class="trace-controls">
+          <center>
+            <button id="startBtn">⏮ Start</button>
+            <button id="prevBtn">⬅ Prev</button>
+            <button id="nextBtn">Next ➡</button>
+            <button id="lastBtn">End ⏭</button>
+          </center>
+        </div>
+      </div>
+
+      <!-- Time Complexity Section -->
+      <div id="timeComplexity" class="container-box">
+        <h3>Time Complexity</h3>
+         <canvas id="complexityGraph" width="400" height="200"></canvas>
+        <pre id="complexity">Complexity details will be shown here...</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script at end for faster loading -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
